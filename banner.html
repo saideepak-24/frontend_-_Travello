@@ -1,0 +1,324 @@
+<!-- ===== BANNER COMPONENT - components/banner.html ===== -->
+<!-- This is a reusable hero banner component -->
+<!-- Customize the content for different pages -->
+
+<section class="hero-banner" id="heroBanner">
+    <!-- Background Image/Video Container -->
+    <div class="banner-background">
+        <!-- Image Background -->
+        <div class="banner-image">
+            <img src="images/banners/hero-banner.jpg" alt="Beautiful travel destination" class="banner-img">
+        </div>
+        
+        <!-- Video Background (optional) -->
+        <div class="banner-video" style="display: none;">
+            <video autoplay muted loop playsinline>
+                <source src="images/banners/hero-video.mp4" type="video/mp4">
+                <source src="images/banners/hero-video.webm" type="video/webm">
+                Your browser does not support video backgrounds.
+            </video>
+        </div>
+        
+        <!-- Animated Particles Background -->
+        <div class="particles-container" id="particles"></div>
+        
+        <!-- Gradient Overlay -->
+        <div class="banner-overlay"></div>
+    </div>
+    
+    <!-- Banner Content -->
+    <div class="banner-content">
+        <div class="container">
+            <div class="banner-text">
+                <!-- Dynamic Content - Can be changed per page -->
+                <div class="banner-badge" data-aos="fade-down" data-aos-delay="200">
+                    <i class="fas fa-star"></i>
+                    <span>Rated #1 Travel Agency 2024</span>
+                </div>
+                
+                <h1 class="banner-title" data-aos="fade-up" data-aos-delay="400">
+                    <span class="title-line">Discover Amazing</span>
+                    <span class="title-line highlight">Destinations</span>
+                </h1>
+                
+                <p class="banner-subtitle" data-aos="fade-up" data-aos-delay="600">
+                    Explore the world's most beautiful places with Travello. 
+                    Create unforgettable memories and embark on the journey of a lifetime.
+                </p>
+                
+                <!-- Statistics -->
+                <div class="banner-stats" data-aos="fade-up" data-aos-delay="800">
+                    <div class="stat-item">
+                        <strong data-counter="500">500</strong>
+                        <span>Destinations</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong data-counter="10000">10K</strong>
+                        <span>Happy Travelers</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong data-counter="15">15</strong>
+                        <span>Years Experience</span>
+                    </div>
+                </div>
+                
+                <!-- Call to Action Buttons -->
+                <div class="banner-actions" data-aos="fade-up" data-aos-delay="1000">
+                    <a href="#destinations" class="btn btn-primary btn-lg cta-primary">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore Destinations</span>
+                    </a>
+                    <a href="#about" class="btn btn-secondary btn-lg cta-secondary">
+                        <i class="fas fa-play"></i>
+                        <span>Watch Our Story</span>
+                    </a>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="trust-indicators" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% Safe & Secure</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-medal"></i>
+                        <span>Award Winning Service</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-headset"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-indicator" data-aos="fade-in" data-aos-delay="1400">
+        <div class="scroll-line"></div>
+        <div class="scroll-text">Scroll to Explore</div>
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+    
+    <!-- Banner Navigation Dots (for image slider) -->
+    <div class="banner-dots">
+        <button class="dot active" data-slide="0"></button>
+        <button class="dot" data-slide="1"></button>
+        <button class="dot" data-slide="2"></button>
+    </div>
+    
+    <!-- Social Proof Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-card" style="top: 20%; left: 10%;" data-aos="fade-right" data-aos-delay="1600">
+            <div class="card-content">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>50+ Countries</span>
+            </div>
+        </div>
+        
+        <div class="floating-card" style="top: 60%; right: 10%;" data-aos="fade-left" data-aos-delay="1800">
+            <div class="card-content">
+                <i class="fas fa-users"></i>
+                <span>Expert Guides</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BANNER STYLES ===== -->
+<style>
+/* Hero Banner Component Styles */
+.hero-banner {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+}
+
+/* Background Container */
+.banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.banner-image,
+.banner-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-img,
+.banner-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Particles Background */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Gradient Overlay */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(102, 126, 234, 0.8) 0%,
+        rgba(118, 75, 162, 0.6) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+}
+
+/* Banner Content */
+.banner-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.banner-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Banner Badge */
+.banner-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.banner-badge i {
+    color: #ffd700;
+    margin-right: 8px;
+}
+
+.banner-badge span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Banner Title */
+.banner-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.title-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.title-line:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.title-line.highlight {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.title-line.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.6s forwards;
+}
+
+/* Banner Subtitle */
+.banner-subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Banner Statistics */
+.banner-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* Animations */
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+</style>
